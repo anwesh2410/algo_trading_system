@@ -1,0 +1,42 @@
+2025-08-07 23:57:27,294 - main - INFO - Starting Algorithmic Trading System - Test Mode
+2025-08-07 23:57:31,598 - main - ERROR - Error during execution: Cannot set a DataFrame with multiple columns to the single column BB_Upper
+2025-08-07 23:57:31,613 - main - ERROR - Traceback (most recent call last):
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 29, in main
+    processed_data = data_processor.process_all_stocks()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/utils/data_processor.py", line 74, in process_all_stocks
+    data = self.process_stock_data(symbol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/utils/data_processor.py", line 54, in process_stock_data
+    processed_data = self.data_fetcher.add_technical_indicators(data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/utils/data_fetcher.py", line 142, in add_technical_indicators
+    df['BB_Upper'] = df['BB_Middle'] + (std_dev * 2)
+    ~~^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 4084, in __setitem__
+    self._set_item_frame_value(key, value)
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 4242, in _set_item_frame_value
+    raise ValueError(
+ValueError: Cannot set a DataFrame with multiple columns to the single column BB_Upper
+
+2025-08-07 23:59:16,972 - main - INFO - Starting Algorithmic Trading System - Test Mode
+2025-08-07 23:59:16,981 - main - ERROR - Error during execution: Cannot set a DataFrame with multiple columns to the single column BB_Upper
+2025-08-07 23:59:16,982 - main - ERROR - Traceback (most recent call last):
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 29, in main
+    processed_data = data_processor.process_all_stocks()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/utils/data_processor.py", line 74, in process_all_stocks
+    data = self.process_stock_data(symbol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/utils/data_processor.py", line 54, in process_stock_data
+    processed_data = self.data_fetcher.add_technical_indicators(data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/utils/data_fetcher.py", line 143, in add_technical_indicators
+    df['BB_Upper'] = df['BB_Middle'] + (rolling_std * 2)
+    ~~^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 4084, in __setitem__
+    self._set_item_frame_value(key, value)
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 4242, in _set_item_frame_value
+    raise ValueError(
+ValueError: Cannot set a DataFrame with multiple columns to the single column BB_Upper
+
