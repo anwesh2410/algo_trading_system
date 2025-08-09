@@ -17,6 +17,84 @@ from config.config_loader import Config
 # Set up logger
 logger = setup_logger('data_processor')
 
+
+# Consolidate this pattern into a utility function
+def convert_multi_index_dataframe(df):
+    """Convert MultiIndex DataFrame to standard DataFrame with consistent column names"""
+    if not isinstance(df.columns, pd.MultiIndex):
+        return df
+        
+    simple_df = pd.DataFrame(index=df.index)
+    
+    for col_name in ['Close', 'High', 'Low', 'Open', 'Volume']:
+        for full_col in df.columns:
+            if full_col[0] == col_name:
+                simple_df[col_name] = df[full_col].values
+                break
+                
+    return simple_df
+
+
+# Add this function at the beginning of your process_stock method:
+
+def process_stock(self, stock_data, symbol):
+    """
+    Process raw stock data and add technical indicators
+    
+    Args:
+        stock_data (DataFrame): Raw stock data
+        symbol (str): Stock symbol
+        
+    Returns:
+        DataFrame: Processed stock data with technical indicators
+    """
+    # Debug the input data structure
+    logger.info(f"Processing {symbol} data with shape {stock_data.shape}")
+    logger.info(f"Column structure: {type(stock_data.columns)}")
+    logger.info(f"Columns: {list(stock_data.columns)}")
+    
+    # Ensure we're working with a clean DataFrame
+    if isinstance(stock_data.columns, pd.MultiIndex):
+        logger.info("Converting MultiIndex DataFrame to simple DataFrame")
+        # Get the basic OHLCV columns from the first level
+        simple_data = pd.DataFrame()
+        
+        # Map common column names
+        col_mapping = {
+            'Open': ['Open', 'open'],
+            'High': ['High', 'high'],
+            'Low': ['Low', 'low'],
+            'Close': ['Close', 'close', 'Adj Close', 'adj close'],
+            'Volume': ['Volume', 'volume']
+        }
+        
+        # Try to extract columns using various possible names
+        for target_col, possible_cols in col_mapping.items():
+            found = False
+            for col in possible_cols:
+                # Check if this column exists in any level of the MultiIndex
+                for level in range(len(stock_data.columns.levels)):
+                    if col in stock_data.columns.levels[level]:
+                        # Find the full MultiIndex column that contains this name
+                        for full_col in stock_data.columns:
+                            if full_col[level] == col:
+                                simple_data[target_col] = stock_data[full_col]
+                                found = True
+                                logger.info(f"Found {target_col} column as {full_col}")
+                                break
+                    if found:
+                        break
+                if found:
+                    break
+            
+            if not found:
+                logger.warning(f"Could not find {target_col} column in the data")
+        
+        # Use the simplified DataFrame for processing
+        stock_data = simple_data
+    
+    # Continue with the rest of your processing...
+
 class DataProcessor:
     """Process stock data for analysis and machine learning"""
     

@@ -3,8 +3,16 @@ import numpy as np
 from datetime import datetime
 import matplotlib.pyplot as plt
 from pathlib import Path
-from utils.logger import setup_logger
+import os
+import sys
+
+# Add project root to Python path
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(project_root)
+
+from src.utils.logger import setup_logger
 from config.config_loader import Config
+from src.integrations.integrations_manager import IntegrationsManager
 
 # Set up logger
 logger = setup_logger('backtest')
@@ -22,6 +30,7 @@ class Backtest:
         self.initial_capital = initial_capital
         self.results_dir = Path(__file__).parent.parent.parent / "data" / "results"
         self.results_dir.mkdir(exist_ok=True, parents=True)
+        self.integrations = IntegrationsManager.get_instance()
     
     def run_backtest(self, df, symbol):
         """
@@ -66,6 +75,17 @@ class Backtest:
                 data.at[data.index[i], 'Entry_Price'] = entry_price
                 
                 logger.info(f"BUY signal for {symbol} at {trade_date}: {entry_price:.2f}")
+                
+                # Log buy signal to Google Sheets (optional for backtesting)
+                if Config.LOG_BACKTEST_SIGNALS_TO_INTEGRATIONS:
+                    self.integrations.log_trade(
+                        symbol=symbol,
+                        action="BUY",
+                        price=entry_price,
+                        quantity=int(portfolio * 0.1 / entry_price),  # Example allocation
+                        portfolio_value=portfolio,
+                        strategy="Backtest"
+                    )
             
             # Check for sell signal when in a position
             elif position == 1 and data['Sell_Signal'].iloc[i] == 1:
@@ -97,6 +117,10 @@ class Backtest:
                 data.at[data.index[i], 'Portfolio_Value'] = portfolio
                 
                 logger.info(f"SELL signal for {symbol} at {exit_date}: {exit_price:.2f}, P&L: {pnl:.2f}%")
+                
+                # Log sell signal to integrations for significant trades
+                if Config.LOG_BACKTEST_SIGNALS_TO_INTEGRATIONS and abs(pnl) > 2.0:
+                    self.process_trade(symbol, trade_date, entry_price, exit_date, exit_price, pnl, portfolio)
                 
                 # Reset position
                 position = 0
@@ -138,6 +162,29 @@ class Backtest:
         metrics = self.calculate_metrics(trades_df, data)
         
         return data, trades_df, metrics
+    
+    def process_trade(self, symbol, entry_date, entry_price, exit_date, exit_price, pnl_pct, portfolio_value):
+        """Process and log a completed trade"""
+        # Log trade to Google Sheets
+        self.integrations.log_trade(
+            symbol=symbol,
+            action="SELL",  # This is when we exit the trade
+            price=exit_price,
+            quantity=int(portfolio_value / entry_price * 0.1),  # 10% allocation
+            pnl=pnl_pct,
+            portfolio_value=portfolio_value,
+            strategy="Backtest"
+        )
+        
+        # Send Telegram alert for significant trades
+        self.integrations.telegram_helper.send_trade_signal(
+            symbol=symbol,
+            action="CLOSED",
+            price=exit_price,
+            quantity=int(portfolio_value / entry_price * 0.1),  # 10% allocation
+            signal_strength=abs(pnl_pct) / 5.0,  # Normalize to 0-1 scale (assuming 5% is strong)
+            strategy="Backtest"
+        )
     
     def calculate_metrics(self, trades_df, data):
         """

@@ -1,0 +1,24 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore environment files
+.env
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore build artifacts
+build/
+dist/
+
+# Ignore VSCode settings
+.vscode/
+data/trades/
+algo_trading_system/config/.env
+*.json
+__pycache__/
+*.pyc
+logs/
+data/trades/

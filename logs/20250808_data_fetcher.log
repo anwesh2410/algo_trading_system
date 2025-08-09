@@ -18,3 +18,45 @@
 2025-08-08 00:23:11,316 - data_fetcher - INFO - Loading cached data for RELIANCE.NS
 2025-08-08 00:23:11,331 - data_fetcher - INFO - Loading cached data for TCS.NS
 2025-08-08 00:23:11,344 - data_fetcher - INFO - Loading cached data for HDFCBANK.NS
+2025-08-08 00:36:03,300 - data_fetcher - INFO - Loading cached data for RELIANCE.NS
+2025-08-08 00:36:03,320 - data_fetcher - INFO - Loading cached data for TCS.NS
+2025-08-08 00:36:03,333 - data_fetcher - INFO - Loading cached data for HDFCBANK.NS
+2025-08-08 00:38:56,702 - data_fetcher - INFO - Loading cached data for RELIANCE.NS
+2025-08-08 00:38:56,718 - data_fetcher - INFO - Loading cached data for TCS.NS
+2025-08-08 00:38:56,732 - data_fetcher - INFO - Loading cached data for HDFCBANK.NS
+2025-08-08 00:40:33,230 - data_fetcher - INFO - Loading cached data for RELIANCE.NS
+2025-08-08 00:40:33,245 - data_fetcher - INFO - Loading cached data for TCS.NS
+2025-08-08 00:40:33,259 - data_fetcher - INFO - Loading cached data for HDFCBANK.NS
+2025-08-08 00:47:18,101 - data_fetcher - INFO - Loading cached data for RELIANCE.NS
+2025-08-08 00:47:18,117 - data_fetcher - INFO - Loading cached data for TCS.NS
+2025-08-08 00:47:18,132 - data_fetcher - INFO - Loading cached data for HDFCBANK.NS
+2025-08-08 00:51:04,245 - data_fetcher - INFO - Loading cached data for RELIANCE.NS
+2025-08-08 00:51:04,261 - data_fetcher - INFO - Loading cached data for TCS.NS
+2025-08-08 00:51:04,274 - data_fetcher - INFO - Loading cached data for HDFCBANK.NS
+2025-08-08 00:55:09,614 - data_fetcher - INFO - Loading cached data for RELIANCE.NS
+2025-08-08 00:55:09,630 - data_fetcher - INFO - Loading cached data for TCS.NS
+2025-08-08 00:55:09,644 - data_fetcher - INFO - Loading cached data for HDFCBANK.NS
+2025-08-08 00:58:39,034 - data_fetcher - INFO - Loading cached data for RELIANCE.NS
+2025-08-08 00:58:39,051 - data_fetcher - INFO - Loading cached data for TCS.NS
+2025-08-08 00:58:39,065 - data_fetcher - INFO - Loading cached data for HDFCBANK.NS
+2025-08-08 00:59:42,860 - data_fetcher - INFO - Loading cached data for RELIANCE.NS
+2025-08-08 00:59:42,875 - data_fetcher - INFO - Loading cached data for TCS.NS
+2025-08-08 00:59:42,888 - data_fetcher - INFO - Loading cached data for HDFCBANK.NS
+2025-08-08 16:30:07,954 - data_fetcher - INFO - Loading cached data for RELIANCE.NS
+2025-08-08 16:30:08,015 - data_fetcher - INFO - Loading cached data for TCS.NS
+2025-08-08 16:30:08,031 - data_fetcher - INFO - Loading cached data for HDFCBANK.NS
+2025-08-08 17:53:27,396 - data_fetcher - INFO - Loading cached data for RELIANCE.NS
+2025-08-08 17:53:27,412 - data_fetcher - INFO - Loading cached data for TCS.NS
+2025-08-08 17:53:27,427 - data_fetcher - INFO - Loading cached data for HDFCBANK.NS
+2025-08-08 22:12:25,120 - data_fetcher - INFO - Fetching data for AAPL from 2020-01-01 to 
+2025-08-08 22:12:27,892 - data_fetcher - INFO - Cached data for AAPL
+2025-08-08 22:12:27,929 - data_fetcher - INFO - Fetching data for MSFT from 2020-01-01 to 
+2025-08-08 22:12:28,564 - data_fetcher - INFO - Cached data for MSFT
+2025-08-08 22:12:28,591 - data_fetcher - INFO - Fetching data for GOOG from 2020-01-01 to 
+2025-08-08 22:12:29,188 - data_fetcher - INFO - Cached data for GOOG
+2025-08-08 23:39:18,296 - data_fetcher - INFO - Loading cached data for AAPL
+2025-08-08 23:39:18,330 - data_fetcher - INFO - Loading cached data for MSFT
+2025-08-08 23:39:18,358 - data_fetcher - INFO - Loading cached data for GOOG
+2025-08-08 23:57:41,883 - data_fetcher - INFO - Loading cached data for AAPL
+2025-08-08 23:57:41,912 - data_fetcher - INFO - Loading cached data for MSFT
+2025-08-08 23:57:41,938 - data_fetcher - INFO - Loading cached data for GOOG

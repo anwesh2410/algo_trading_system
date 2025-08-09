@@ -88,3 +88,371 @@ KeyError: 'PnL'
 2025-08-08 00:23:11,626 - main - INFO - Running backtest for TCS.NS
 2025-08-08 00:23:11,855 - main - INFO - Running backtest for HDFCBANK.NS
 2025-08-08 00:23:12,092 - main - INFO - Test execution completed successfully
+2025-08-08 00:36:03,300 - main - INFO - Starting Algorithmic Trading System - Test Mode
+2025-08-08 00:36:03,346 - main - INFO - Successfully processed data for 3 stocks
+2025-08-08 00:36:03,346 - main - INFO - Running backtests on processed data
+2025-08-08 00:36:03,346 - main - INFO - Running backtest for RELIANCE.NS
+2025-08-08 00:36:03,620 - main - INFO - Running backtest for TCS.NS
+2025-08-08 00:36:03,854 - main - INFO - Running backtest for HDFCBANK.NS
+2025-08-08 00:36:04,100 - main - INFO - Training machine learning models
+2025-08-08 00:36:04,100 - main - INFO - Training model for RELIANCE.NS
+2025-08-08 00:36:04,101 - main - ERROR - Error in ML processing: Operands are not aligned. Do `left, right = left.align(right, axis=1, copy=False)` before operating.
+2025-08-08 00:36:04,107 - main - ERROR - Traceback (most recent call last):
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 55, in main
+    ml_models = train_ml_models(processed_data)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 176, in train_ml_models
+    accuracy = predictor.train_model(data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/models/ml_predictor.py", line 96, in train_model
+    X, y = self.prepare_features(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/models/ml_predictor.py", line 52, in prepare_features
+    df['Target'] = (df['Next_Day_Close'] > df['Close']).astype(int)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/ops/common.py", line 76, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/arraylike.py", line 48, in __lt__
+    return self._cmp_method(other, operator.lt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 7631, in _cmp_method
+    self, other = self._align_for_op(other, axis, flex=False, level=None)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 7939, in _align_for_op
+    raise ValueError(
+ValueError: Operands are not aligned. Do `left, right = left.align(right, axis=1, copy=False)` before operating.
+
+2025-08-08 00:36:04,107 - main - INFO - Test execution completed successfully
+2025-08-08 00:38:56,702 - main - INFO - Starting Algorithmic Trading System - Test Mode
+2025-08-08 00:38:56,746 - main - INFO - Successfully processed data for 3 stocks
+2025-08-08 00:38:56,746 - main - INFO - Running backtests on processed data
+2025-08-08 00:38:56,746 - main - INFO - Running backtest for RELIANCE.NS
+2025-08-08 00:38:57,040 - main - INFO - Running backtest for TCS.NS
+2025-08-08 00:38:57,280 - main - INFO - Running backtest for HDFCBANK.NS
+2025-08-08 00:38:57,529 - main - INFO - Training machine learning models
+2025-08-08 00:38:57,529 - main - INFO - Training model for RELIANCE.NS
+2025-08-08 00:38:57,530 - main - ERROR - Error in ML processing: Operands are not aligned. Do `left, right = left.align(right, axis=1, copy=False)` before operating.
+2025-08-08 00:38:57,531 - main - ERROR - Traceback (most recent call last):
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 56, in main
+    ml_models = train_ml_models(processed_data)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 200, in train_ml_models
+    accuracy = predictor.train_model(data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/models/ml_predictor.py", line 113, in train_model
+    X, y = self.prepare_features(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/models/ml_predictor.py", line 59, in prepare_features
+    df['Target'] = (df['Next_Day_Close'] > close_col).astype(int)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/ops/common.py", line 76, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/arraylike.py", line 48, in __lt__
+    return self._cmp_method(other, operator.lt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 7631, in _cmp_method
+    self, other = self._align_for_op(other, axis, flex=False, level=None)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 7939, in _align_for_op
+    raise ValueError(
+ValueError: Operands are not aligned. Do `left, right = left.align(right, axis=1, copy=False)` before operating.
+
+2025-08-08 00:38:57,532 - main - INFO - Test execution completed successfully
+2025-08-08 00:40:33,229 - main - INFO - Starting Algorithmic Trading System - Test Mode
+2025-08-08 00:40:33,273 - main - INFO - Successfully processed data for 3 stocks
+2025-08-08 00:40:33,273 - main - INFO - Running backtests on processed data
+2025-08-08 00:40:33,273 - main - INFO - Running backtest for RELIANCE.NS
+2025-08-08 00:40:33,551 - main - INFO - Running backtest for TCS.NS
+2025-08-08 00:40:33,789 - main - INFO - Running backtest for HDFCBANK.NS
+2025-08-08 00:40:34,031 - main - INFO - Training machine learning models
+2025-08-08 00:40:34,031 - main - INFO - Training model for RELIANCE.NS
+2025-08-08 00:40:34,032 - main - ERROR - Error in ML processing: Operands are not aligned. Do `left, right = left.align(right, axis=1, copy=False)` before operating.
+2025-08-08 00:40:34,034 - main - ERROR - Traceback (most recent call last):
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 56, in main
+    ml_models = train_ml_models(processed_data)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 200, in train_ml_models
+    accuracy = predictor.train_model(data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/models/ml_predictor.py", line 114, in train_model
+    X, y = self.prepare_features(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/models/ml_predictor.py", line 60, in prepare_features
+    df['Target'] = (left > right).astype(int)
+                    ^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/ops/common.py", line 76, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/arraylike.py", line 48, in __lt__
+    return self._cmp_method(other, operator.lt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 7631, in _cmp_method
+    self, other = self._align_for_op(other, axis, flex=False, level=None)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 7939, in _align_for_op
+    raise ValueError(
+ValueError: Operands are not aligned. Do `left, right = left.align(right, axis=1, copy=False)` before operating.
+
+2025-08-08 00:40:34,034 - main - INFO - Test execution completed successfully
+2025-08-08 00:47:18,101 - main - INFO - Starting Algorithmic Trading System - Test Mode
+2025-08-08 00:47:18,147 - main - INFO - Successfully processed data for 3 stocks
+2025-08-08 00:47:18,147 - main - INFO - Running backtests on processed data
+2025-08-08 00:47:18,147 - main - INFO - Running backtest for RELIANCE.NS
+2025-08-08 00:47:18,420 - main - INFO - Running backtest for TCS.NS
+2025-08-08 00:47:18,658 - main - INFO - Running backtest for HDFCBANK.NS
+2025-08-08 00:47:18,898 - main - INFO - Training machine learning models
+2025-08-08 00:47:18,898 - main - INFO - Training model for RELIANCE.NS
+2025-08-08 00:47:18,904 - main - ERROR - Error in ML processing: 'Close'
+2025-08-08 00:47:18,906 - main - ERROR - Traceback (most recent call last):
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Close'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 56, in main
+    ml_models = train_ml_models(processed_data)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 200, in train_ml_models
+    accuracy = predictor.train_model(data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/models/ml_predictor.py", line 124, in train_model
+    X, y = self.prepare_features(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/models/ml_predictor.py", line 71, in prepare_features
+    df['Next_Day_Close'] = df['Close'].shift(-1)
+                           ~~^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 3896, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Close'
+
+2025-08-08 00:47:18,906 - main - INFO - Test execution completed successfully
+2025-08-08 00:51:04,244 - main - INFO - Starting Algorithmic Trading System - Test Mode
+2025-08-08 00:51:04,288 - main - INFO - Successfully processed data for 3 stocks
+2025-08-08 00:51:04,288 - main - INFO - Running backtests on processed data
+2025-08-08 00:51:04,288 - main - INFO - Running backtest for RELIANCE.NS
+2025-08-08 00:51:04,566 - main - INFO - Running backtest for TCS.NS
+2025-08-08 00:51:04,806 - main - INFO - Running backtest for HDFCBANK.NS
+2025-08-08 00:51:05,044 - main - INFO - Training machine learning models
+2025-08-08 00:51:05,044 - main - INFO - Training model for RELIANCE.NS
+2025-08-08 00:51:05,131 - main - INFO - Model for RELIANCE.NS trained with accuracy: 0.3953
+2025-08-08 00:51:05,131 - main - INFO - Training model for TCS.NS
+2025-08-08 00:51:05,208 - main - INFO - Model for TCS.NS trained with accuracy: 0.5116
+2025-08-08 00:51:05,208 - main - INFO - Training model for HDFCBANK.NS
+2025-08-08 00:51:05,282 - main - INFO - Model for HDFCBANK.NS trained with accuracy: 0.4651
+2025-08-08 00:51:05,282 - main - INFO - Successfully trained ML models for 3 stocks
+2025-08-08 00:51:05,282 - main - INFO - Making predictions with ML models
+2025-08-08 00:51:05,284 - main - ERROR - Error in ML processing: 'RandomForestClassifier' object has no attribute 'feature_names_in_'
+2025-08-08 00:51:05,285 - main - ERROR - Traceback (most recent call last):
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 60, in main
+    predictions = make_ml_predictions(ml_models, processed_data)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 228, in make_ml_predictions
+    pred = predictor.predict(latest_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/models/ml_predictor.py", line 238, in predict
+    model_features = [col for col in self.model.feature_names_in_ if col in features]
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RandomForestClassifier' object has no attribute 'feature_names_in_'
+
+2025-08-08 00:51:05,285 - main - INFO - Test execution completed successfully
+2025-08-08 00:55:09,614 - main - INFO - Starting Algorithmic Trading System - Test Mode
+2025-08-08 00:55:09,658 - main - INFO - Successfully processed data for 3 stocks
+2025-08-08 00:55:09,658 - main - INFO - Running backtests on processed data
+2025-08-08 00:55:09,658 - main - INFO - Running backtest for RELIANCE.NS
+2025-08-08 00:55:09,935 - main - INFO - Running backtest for TCS.NS
+2025-08-08 00:55:10,180 - main - INFO - Running backtest for HDFCBANK.NS
+2025-08-08 00:55:10,424 - main - INFO - Training machine learning models
+2025-08-08 00:55:10,424 - main - INFO - Training model for RELIANCE.NS
+2025-08-08 00:55:10,500 - main - INFO - Model for RELIANCE.NS trained with accuracy: 0.3953
+2025-08-08 00:55:10,500 - main - INFO - Training model for TCS.NS
+2025-08-08 00:55:10,576 - main - INFO - Model for TCS.NS trained with accuracy: 0.5116
+2025-08-08 00:55:10,576 - main - INFO - Training model for HDFCBANK.NS
+2025-08-08 00:55:10,650 - main - INFO - Model for HDFCBANK.NS trained with accuracy: 0.4651
+2025-08-08 00:55:10,650 - main - INFO - Successfully trained ML models for 3 stocks
+2025-08-08 00:55:10,650 - main - INFO - Making predictions with ML models
+2025-08-08 00:55:10,650 - main - INFO - Making predictions for RELIANCE.NS
+2025-08-08 00:55:10,655 - main - INFO - Prediction for RELIANCE.NS next trading day: DOWN
+2025-08-08 00:55:10,655 - main - INFO - Making predictions for TCS.NS
+2025-08-08 00:55:10,659 - main - INFO - Prediction for TCS.NS next trading day: DOWN
+2025-08-08 00:55:10,659 - main - INFO - Making predictions for HDFCBANK.NS
+2025-08-08 00:55:10,663 - main - INFO - Prediction for HDFCBANK.NS next trading day: UP
+2025-08-08 00:55:10,664 - main - INFO - Running ML-enhanced backtests
+2025-08-08 00:55:10,664 - main - INFO - Running ML-enhanced backtest for RELIANCE.NS
+2025-08-08 00:55:10,762 - main - INFO - Running ML-enhanced backtest for TCS.NS
+2025-08-08 00:55:10,829 - main - INFO - Running ML-enhanced backtest for HDFCBANK.NS
+2025-08-08 00:55:10,906 - main - INFO - Test execution completed successfully
+2025-08-08 00:58:39,034 - main - INFO - Starting Algorithmic Trading System - Test Mode
+2025-08-08 00:58:39,078 - main - INFO - Successfully processed data for 3 stocks
+2025-08-08 00:58:39,078 - main - INFO - Running backtests on processed data
+2025-08-08 00:58:39,078 - main - INFO - Running backtest for RELIANCE.NS
+2025-08-08 00:58:39,349 - main - INFO - Running backtest for TCS.NS
+2025-08-08 00:58:39,580 - main - INFO - Running backtest for HDFCBANK.NS
+2025-08-08 00:58:39,816 - main - INFO - Training machine learning models
+2025-08-08 00:58:39,816 - main - INFO - Training model for RELIANCE.NS
+2025-08-08 00:58:39,892 - main - INFO - Model for RELIANCE.NS trained with accuracy: 0.3953
+2025-08-08 00:58:39,892 - main - INFO - Training model for TCS.NS
+2025-08-08 00:58:39,968 - main - INFO - Model for TCS.NS trained with accuracy: 0.5116
+2025-08-08 00:58:39,968 - main - INFO - Training model for HDFCBANK.NS
+2025-08-08 00:58:40,043 - main - INFO - Model for HDFCBANK.NS trained with accuracy: 0.4651
+2025-08-08 00:58:40,043 - main - INFO - Successfully trained ML models for 3 stocks
+2025-08-08 00:58:40,043 - main - INFO - Making predictions with ML models
+2025-08-08 00:58:40,043 - main - INFO - Making predictions for RELIANCE.NS
+2025-08-08 00:58:40,048 - main - INFO - Prediction for RELIANCE.NS next trading day: DOWN
+2025-08-08 00:58:40,048 - main - INFO - Making predictions for TCS.NS
+2025-08-08 00:58:40,052 - main - INFO - Prediction for TCS.NS next trading day: DOWN
+2025-08-08 00:58:40,052 - main - INFO - Making predictions for HDFCBANK.NS
+2025-08-08 00:58:40,056 - main - INFO - Prediction for HDFCBANK.NS next trading day: UP
+2025-08-08 00:58:40,056 - main - INFO - Running ML-enhanced backtests
+2025-08-08 00:58:40,056 - main - INFO - Running ML-enhanced backtest for RELIANCE.NS
+2025-08-08 00:58:40,219 - main - INFO - Running ML-enhanced backtest for TCS.NS
+2025-08-08 00:58:40,347 - main - INFO - Running ML-enhanced backtest for HDFCBANK.NS
+2025-08-08 00:58:40,469 - main - INFO - Test execution completed successfully
+2025-08-08 00:59:42,860 - main - INFO - Starting Algorithmic Trading System - Test Mode
+2025-08-08 00:59:42,901 - main - INFO - Successfully processed data for 3 stocks
+2025-08-08 00:59:42,901 - main - INFO - Running backtests on processed data
+2025-08-08 00:59:42,901 - main - INFO - Running backtest for RELIANCE.NS
+2025-08-08 00:59:43,189 - main - INFO - Running backtest for TCS.NS
+2025-08-08 00:59:43,421 - main - INFO - Running backtest for HDFCBANK.NS
+2025-08-08 00:59:43,666 - main - INFO - Training machine learning models
+2025-08-08 00:59:43,666 - main - INFO - Training model for RELIANCE.NS
+2025-08-08 00:59:43,741 - main - INFO - Model for RELIANCE.NS trained with accuracy: 0.3953
+2025-08-08 00:59:43,741 - main - INFO - Training model for TCS.NS
+2025-08-08 00:59:43,816 - main - INFO - Model for TCS.NS trained with accuracy: 0.5116
+2025-08-08 00:59:43,816 - main - INFO - Training model for HDFCBANK.NS
+2025-08-08 00:59:43,890 - main - INFO - Model for HDFCBANK.NS trained with accuracy: 0.4651
+2025-08-08 00:59:43,891 - main - INFO - Successfully trained ML models for 3 stocks
+2025-08-08 00:59:43,891 - main - INFO - Making predictions with ML models
+2025-08-08 00:59:43,891 - main - INFO - Making predictions for RELIANCE.NS
+2025-08-08 00:59:43,895 - main - INFO - Prediction for RELIANCE.NS next trading day: DOWN
+2025-08-08 00:59:43,895 - main - INFO - Making predictions for TCS.NS
+2025-08-08 00:59:43,900 - main - INFO - Prediction for TCS.NS next trading day: DOWN
+2025-08-08 00:59:43,900 - main - INFO - Making predictions for HDFCBANK.NS
+2025-08-08 00:59:43,904 - main - INFO - Prediction for HDFCBANK.NS next trading day: UP
+2025-08-08 00:59:43,904 - main - INFO - Running ML-enhanced backtests
+2025-08-08 00:59:43,904 - main - INFO - Running ML-enhanced backtest for RELIANCE.NS
+2025-08-08 00:59:44,064 - main - INFO - Running ML-enhanced backtest for TCS.NS
+2025-08-08 00:59:44,184 - main - INFO - Running ML-enhanced backtest for HDFCBANK.NS
+2025-08-08 00:59:44,301 - main - INFO - Test execution completed successfully
+2025-08-08 16:30:07,954 - main - INFO - Starting Algorithmic Trading System - Test Mode
+2025-08-08 16:30:08,046 - main - INFO - Successfully processed data for 3 stocks
+2025-08-08 16:30:08,046 - main - INFO - Running backtests on processed data
+2025-08-08 16:30:08,047 - main - INFO - Running backtest for RELIANCE.NS
+2025-08-08 16:30:11,182 - main - INFO - Running backtest for TCS.NS
+2025-08-08 16:30:11,432 - main - INFO - Running backtest for HDFCBANK.NS
+2025-08-08 16:30:11,681 - main - INFO - Training enhanced machine learning models
+2025-08-08 16:30:11,681 - main - INFO - Training enhanced model for RELIANCE.NS
+2025-08-08 16:30:12,117 - main - INFO - Enhanced model for RELIANCE.NS trained with accuracy: 0.5814
+2025-08-08 16:30:12,117 - main - INFO - Training enhanced model for TCS.NS
+2025-08-08 16:30:12,387 - main - INFO - Enhanced model for TCS.NS trained with accuracy: 0.5116
+2025-08-08 16:30:12,387 - main - INFO - Training enhanced model for HDFCBANK.NS
+2025-08-08 16:30:12,682 - main - INFO - Enhanced model for HDFCBANK.NS trained with accuracy: 0.5116
+2025-08-08 16:30:12,682 - main - INFO - Successfully trained enhanced ML models for 3 stocks
+2025-08-08 16:30:12,682 - main - INFO - Successfully trained ML models for 3 stocks
+2025-08-08 16:30:12,682 - main - INFO - Making predictions with ML models
+2025-08-08 16:30:12,682 - main - INFO - Making predictions for RELIANCE.NS
+2025-08-08 16:30:12,692 - main - INFO - Making predictions for TCS.NS
+2025-08-08 16:30:12,701 - main - INFO - Making predictions for HDFCBANK.NS
+2025-08-08 16:30:12,710 - main - INFO - Running ML-enhanced backtests
+2025-08-08 16:30:12,711 - main - INFO - Running ML-enhanced backtest for RELIANCE.NS
+2025-08-08 16:30:12,855 - main - INFO - Running ML-enhanced backtest for TCS.NS
+2025-08-08 16:30:13,017 - main - INFO - Running ML-enhanced backtest for HDFCBANK.NS
+2025-08-08 16:30:13,161 - main - INFO - Test execution completed successfully
+2025-08-08 22:12:24,204 - main - INFO - Starting Algorithmic Trading System - Test Mode
+2025-08-08 22:12:29,214 - main - INFO - Successfully processed data for 3 stocks
+2025-08-08 22:12:29,214 - main - INFO - Running backtests on processed data
+2025-08-08 22:12:29,214 - main - INFO - Running backtest for AAPL
+2025-08-08 22:13:08,734 - main - INFO - Running backtest for MSFT
+2025-08-08 22:13:56,159 - main - INFO - Running backtest for GOOG
+2025-08-08 22:14:50,827 - main - INFO - Training enhanced machine learning models
+2025-08-08 22:14:50,827 - main - INFO - Training enhanced model for AAPL
+2025-08-08 22:14:52,014 - main - INFO - Enhanced model for AAPL trained with accuracy: 0.4855
+2025-08-08 22:14:52,014 - main - INFO - Training enhanced model for MSFT
+2025-08-08 22:14:53,274 - main - INFO - Enhanced model for MSFT trained with accuracy: 0.4964
+2025-08-08 22:14:53,275 - main - INFO - Training enhanced model for GOOG
+2025-08-08 22:14:54,497 - main - INFO - Enhanced model for GOOG trained with accuracy: 0.5290
+2025-08-08 22:14:54,497 - main - INFO - Successfully trained ML models for 3 stocks
+2025-08-08 22:14:54,497 - main - INFO - Making predictions with ML models
+2025-08-08 22:14:54,498 - main - INFO - Making predictions for AAPL
+2025-08-08 22:14:54,511 - main - INFO - Making predictions for MSFT
+2025-08-08 22:14:54,525 - main - INFO - Making predictions for GOOG
+2025-08-08 22:14:54,537 - main - INFO - Running ML-enhanced backtests
+2025-08-08 22:14:54,537 - main - INFO - Running ML-enhanced backtest for AAPL
+2025-08-08 22:14:55,398 - main - INFO - Running ML-enhanced backtest for MSFT
+2025-08-08 22:14:56,214 - main - INFO - Running ML-enhanced backtest for GOOG
+2025-08-08 22:26:11,815 - main - INFO - Running backtests with risk management
+2025-08-08 22:26:11,815 - main - INFO - Running risk-managed backtest for AAPL
+2025-08-08 22:26:11,821 - main - ERROR - Error during execution: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-08-08 22:26:11,848 - main - ERROR - Traceback (most recent call last):
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 154, in main
+    risk_managed_results = run_risk_managed_backtest(processed_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 536, in run_risk_managed_backtest
+    risk_managed_data = risk_manager.apply_risk_management(data, portfolio_value=100000)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/backtest/risk_manager.py", line 187, in apply_risk_management
+    df = self.apply_stop_loss_take_profit(df)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/backtest/risk_manager.py", line 89, in apply_stop_loss_take_profit
+    if not in_position and result.iloc[i-1]['Buy_Signal'] == 1:
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/anaconda3/lib/python3.11/site-packages/pandas/core/generic.py", line 1519, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-08-08 23:39:17,314 - main - INFO - Starting Algorithmic Trading System - Test Mode
+2025-08-08 23:39:18,385 - main - INFO - Successfully processed data for 3 stocks
+2025-08-08 23:39:18,385 - main - INFO - Running backtests on processed data
+2025-08-08 23:39:18,385 - main - INFO - Running backtest for AAPL
+2025-08-08 23:39:56,439 - main - INFO - Running backtest for MSFT
+2025-08-08 23:40:41,346 - main - INFO - Running backtest for GOOG
+2025-08-08 23:41:30,019 - main - INFO - Training enhanced machine learning models
+2025-08-08 23:41:30,019 - main - INFO - Training enhanced model for AAPL
+2025-08-08 23:41:31,236 - main - INFO - Enhanced model for AAPL trained with accuracy: 0.4855
+2025-08-08 23:41:31,237 - main - INFO - Training enhanced model for MSFT
+2025-08-08 23:41:32,555 - main - INFO - Enhanced model for MSFT trained with accuracy: 0.4964
+2025-08-08 23:41:32,555 - main - INFO - Training enhanced model for GOOG
+2025-08-08 23:41:33,788 - main - INFO - Enhanced model for GOOG trained with accuracy: 0.5290
+2025-08-08 23:41:33,788 - main - INFO - Successfully trained ML models for 3 stocks
+2025-08-08 23:41:33,788 - main - INFO - Making predictions with ML models
+2025-08-08 23:41:33,788 - main - INFO - Making predictions for AAPL
+2025-08-08 23:41:33,818 - main - INFO - Making predictions for MSFT
+2025-08-08 23:41:33,836 - main - INFO - Making predictions for GOOG
+2025-08-08 23:41:33,846 - main - INFO - Running ML-enhanced backtests
+2025-08-08 23:41:33,846 - main - INFO - Running ML-enhanced backtest for AAPL
+2025-08-08 23:41:34,697 - main - INFO - Running ML-enhanced backtest for MSFT
+2025-08-08 23:41:35,516 - main - INFO - Running ML-enhanced backtest for GOOG
+2025-08-08 23:52:29,968 - main - INFO - Running backtests with risk management
+2025-08-08 23:52:29,968 - main - INFO - Running risk-managed backtest for AAPL
+2025-08-08 23:52:29,978 - main - ERROR - Error during execution: 'RiskManager' object has no attribute 'stop_loss'
+2025-08-08 23:52:29,979 - main - ERROR - Traceback (most recent call last):
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 154, in main
+    risk_managed_results = run_risk_managed_backtest(processed_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/main.py", line 536, in run_risk_managed_backtest
+    risk_managed_data = risk_manager.apply_risk_management(data, portfolio_value=100000)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/backtest/risk_manager.py", line 267, in apply_risk_management
+    df = self.apply_stop_loss_take_profit(df)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anwesh2410/IITJ/Proj/Assignments/Algo-Trading System/algo_trading_system/src/backtest/risk_manager.py", line 135, in apply_stop_loss_take_profit
+    stop_loss_price = entry_price * (1 - self.stop_loss)
+                                         ^^^^^^^^^^^^^^
+AttributeError: 'RiskManager' object has no attribute 'stop_loss'
+
+2025-08-08 23:57:41,883 - main - INFO - Starting Algorithmic Trading System - Test Mode
+2025-08-08 23:57:41,964 - main - INFO - Successfully processed data for 3 stocks
+2025-08-08 23:57:41,964 - main - INFO - Running backtests on processed data
+2025-08-08 23:57:41,964 - main - INFO - Running backtest for AAPL
+2025-08-08 23:57:57,244 - main - INFO - Running backtest for MSFT

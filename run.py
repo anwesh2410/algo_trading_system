@@ -12,4 +12,5 @@ sys.path.append(project_root)
 from src.main import main
 
 if __name__ == "__main__":
+    # Execute the main function
     main()
